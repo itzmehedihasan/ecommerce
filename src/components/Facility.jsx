@@ -1,7 +1,7 @@
 import React from 'react'
 import { CiShoppingTag } from 'react-icons/ci';
 import Flex from './Flex';
-import IconReturn from '../assets/SvgFile/iconreturn';
+import IconReturn from '../assets/SvgFile/IconReturn';
 
 
 function Facility() {
