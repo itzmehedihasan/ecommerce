@@ -6,11 +6,21 @@ import PortionHeading from './PortionHeading'
 import { AiFillHeart } from 'react-icons/ai';
 import ReaturnCercle from '../assets/SvgFile/ReaturnCercle'
 import { HiShoppingCart } from 'react-icons/hi';
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../slices/cartSlice' 
 
 HiShoppingCart
-function Product() {
+function Product({heading}) {
   //                 npm run dev
-
+  let dispatch = useDispatch()
+let handleCart = ()=>{
+  dispatch(addToCart({
+    title: heading,
+    price: 44,
+    productImg: product,
+    Quantity: 1,
+  }))
+}
   return (
     <>
   <div className='mx-3 p-8 relative'>
@@ -29,14 +39,14 @@ function Product() {
                   </div2>
 
                   <div3 className='font-dm font-bold text-base flex items-center justify-end gap-x-2 pb-2'>
-                    <p>Add to Cart</p>
+                    <p className='cursor-pointer' onClick={handleCart}>Add to Cart</p>
                     <HiShoppingCart/>
                   </div3>
           </div>
       </div>
 
                   <div className='flex justify-between mt-4'>
-                    <PortionHeading text="Basic Crew Neck Tee"/>
+                    <PortionHeading text={heading}/>
                       <p className='font-dm font-normal text-base'>$44.00</p>
                  
                       

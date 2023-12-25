@@ -37,6 +37,7 @@ export default {
       //   width(percentage) list ============
       width: {
         '48': '48%',
+        '25': '25%',
       },
     },
   },
